@@ -9,8 +9,8 @@ module.exports = {
       colors: {
         denim: "#0c1b33",
         "denim-light": "#1e3a6a",
-        bone: "#f5f5f5",
-        acid: "#ccff00",
+        bone: "#f3f0e6", // Recycled Paper
+        acid: "#d4e056", // Eco Lime
       },
       fontFamily: {
         sans: ["var(--font-outfit)"],

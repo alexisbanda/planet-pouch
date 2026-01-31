@@ -13,17 +13,11 @@ export default function Founder() {
           transition={{ duration: 0.8 }}
         >
           <div className="relative aspect-[3/4] w-full max-w-md mx-auto md:mr-auto overflow-hidden border-2 border-denim">
-             {/* Placeholder for Founder Image */}
-             <div className="absolute inset-0 bg-gray-300 flex items-center justify-center text-denim/50 text-2xl font-bold uppercase tracking-widest">
-                Kristen Banda
-             </div>
-             {/* This would be the real image */}
-             {/* <Image
-              src="/founder.jpg" 
+             <img
+              src="/founder.png" 
               alt="Kristen Banda"
-              fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
-            /> */}
+              className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
+            />
              <div className="absolute inset-0 bg-acid/10 mix-blend-multiply" />
           </div>
         </motion.div>
@@ -50,17 +44,17 @@ export default function Founder() {
           </h2>
 
           <p className="text-lg md:text-xl font-light mb-6 leading-relaxed">
-            More than just a designer—a teenager on a mission. Driven by a passion for <span className="font-semibold text-denim">recycling</span>, <span className="font-semibold text-denim">fashion</span>, and <span className="font-semibold text-denim">ecology</span>, Kristen turns forgotten denim into statements of survival.
+            Finding beauty in what others discard. Kristen is an adolescent visionary driven by a deep love for the <span className="font-semibold text-denim">planet</span> and <span className="font-semibold text-denim">sustainable fashion</span>. She doesn&apos;t just design bags; she engineers solutions for a greener future.
           </p>
 
           <p className="text-lg md:text-xl font-light mb-10 leading-relaxed">
-             From experimenting in her room to launching Planet Pouch, she proves that style doesn&apos;t have to cost the Earth. It&apos;s raw, it&apos;s real, and it&apos;s just getting started.
+             Her mission is simple: prove that ecology and style can coexist. By transforming recycled denim into unique statement pieces, she reduces landfill waste one stitch at a time. It&apos;s not just a brand; it&apos;s a movement led by the next generation of eco-warriors.
           </p>
 
            <div className="relative inline-block group">
-              <button className="relative z-10 px-8 py-3 bg-denim text-bone font-bold text-lg uppercase tracking-wide border border-denim group-hover:bg-acid group-hover:text-denim group-hover:border-acid transition-colors duration-300">
-                Follow Her Journey
-              </button>
+                <a href="#manifesto" className="relative z-10 px-8 py-3 bg-denim text-bone font-bold text-lg uppercase tracking-wide border border-denim group-hover:bg-acid group-hover:text-denim group-hover:border-acid transition-colors duration-300 inline-block">
+                 Follow Her Journey
+               </a>
                <div className="absolute top-2 left-2 w-full h-full border border-acid -z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1" />
            </div>
         </motion.div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { CheckCircle2 } from "lucide-react";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -9,6 +10,8 @@ export default function Contact() {
     email: "",
     message: "",
   });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormState({
@@ -19,9 +22,14 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
+    // Simulate form submission
     console.log("Form submitted:", formState);
-    alert("Message sent! (This is a placeholder)");
+    
+    // Show success state
+    setTimeout(() => {
+      setIsSubmitted(true);
+      setFormState({ name: "", email: "", message: "" });
+    }, 1000); // Fake delay
   };
 
   return (
@@ -45,79 +53,103 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <motion.form
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            onSubmit={handleSubmit} 
-            className="space-y-8"
-        >
-            <div className="grid md:grid-cols-2 gap-8">
+        {isSubmitted ? (
+             <motion.div
+             initial={{ opacity: 0, scale: 0.9 }}
+             animate={{ opacity: 1, scale: 1 }}
+             className="bg-bone/5 border border-acid/30 p-12 rounded-lg text-center backdrop-blur-sm shadow-2xl"
+           >
+             <div className="flex justify-center mb-6">
+               <div className="w-20 h-20 bg-acid/20 rounded-full flex items-center justify-center">
+                 <CheckCircle2 className="w-10 h-10 text-acid" />
+               </div>
+             </div>
+             <h3 className="text-3xl font-bold text-white mb-4">MESSAGE RECEIVED</h3>
+             <p className="text-bone/70 text-lg mb-8 max-w-lg mx-auto">
+               Thanks for reaching out, rebel. We&apos;ll get back to you before you can say &quot;sustainable fashion.&quot;
+             </p>
+             <button 
+               onClick={() => setIsSubmitted(false)}
+               className="text-acid font-bold tracking-widest hover:text-white transition-colors"
+             >
+               SEND ANOTHER MESSAGE
+             </button>
+           </motion.div>
+        ) : (
+            <motion.form
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                onSubmit={handleSubmit} 
+                className="space-y-8"
+            >
+                <div className="grid md:grid-cols-2 gap-8">
+                    <div className="relative group">
+                        <input 
+                            type="text" 
+                            name="name" 
+                            id="name"
+                            value={formState.name}
+                            onChange={handleChange}
+                            required
+                            className="peer w-full bg-transparent border-b border-bone/20 py-4 text-xl focus:outline-none focus:border-acid transition-colors duration-300 placeholder-transparent"
+                            placeholder="Your Name"
+                        />
+                        <label 
+                            htmlFor="name" 
+                            className="absolute left-0 top-0 text-bone/50 text-base transition-all duration-300 peer-placeholder-shown:top-4 peer-placeholder-shown:text-xl peer-placeholder-shown:text-bone/30 peer-focus:top-0 peer-focus:text-xs peer-focus:text-acid"
+                        >
+                            Your Name
+                        </label>
+                    </div>
+                    <div className="relative group">
+                        <input 
+                            type="email" 
+                            name="email" 
+                            id="email"
+                            value={formState.email}
+                            onChange={handleChange}
+                            required
+                            className="peer w-full bg-transparent border-b border-bone/20 py-4 text-xl focus:outline-none focus:border-acid transition-colors duration-300 placeholder-transparent"
+                            placeholder="Email Address"
+                        />
+                        <label 
+                            htmlFor="email" 
+                            className="absolute left-0 top-0 text-bone/50 text-base transition-all duration-300 peer-placeholder-shown:top-4 peer-placeholder-shown:text-xl peer-placeholder-shown:text-bone/30 peer-focus:top-0 peer-focus:text-xs peer-focus:text-acid"
+                        >
+                            Email Address
+                        </label>
+                    </div>
+                </div>
+
                 <div className="relative group">
-                    <input 
-                        type="text" 
-                        name="name" 
-                        id="name"
-                        value={formState.name}
+                    <textarea 
+                        name="message" 
+                        id="message"
+                        rows={4}
+                        value={formState.message}
                         onChange={handleChange}
                         required
-                        className="peer w-full bg-transparent border-b border-bone/20 py-4 text-xl focus:outline-none focus:border-acid transition-colors duration-300 placeholder-transparent"
-                        placeholder="Your Name"
+                        className="peer w-full bg-transparent border-b border-bone/20 py-4 text-xl focus:outline-none focus:border-acid transition-colors duration-300 placeholder-transparent resize-none"
+                        placeholder="Your Message"
                     />
                     <label 
-                        htmlFor="name" 
-                        className="absolute left-0 top-0 text-bone/50 text-base transition-all duration-300 peer-placeholder-shown:top-4 peer-placeholder-shown:text-xl peer-placeholder-shown:text-bone/30 peer-focus:top-0 peer-focus:text-xs peer-focus:text-acid"
-                    >
-                        Your Name
-                    </label>
+                            htmlFor="message" 
+                            className="absolute left-0 top-0 text-bone/50 text-base transition-all duration-300 peer-placeholder-shown:top-4 peer-placeholder-shown:text-xl peer-placeholder-shown:text-bone/30 peer-focus:top-0 peer-focus:text-xs peer-focus:text-acid"
+                        >
+                            Your Message
+                        </label>
                 </div>
-                <div className="relative group">
-                    <input 
-                        type="email" 
-                        name="email" 
-                        id="email"
-                        value={formState.email}
-                        onChange={handleChange}
-                        required
-                         className="peer w-full bg-transparent border-b border-bone/20 py-4 text-xl focus:outline-none focus:border-acid transition-colors duration-300 placeholder-transparent"
-                         placeholder="Email Address"
-                    />
-                     <label 
-                        htmlFor="email" 
-                        className="absolute left-0 top-0 text-bone/50 text-base transition-all duration-300 peer-placeholder-shown:top-4 peer-placeholder-shown:text-xl peer-placeholder-shown:text-bone/30 peer-focus:top-0 peer-focus:text-xs peer-focus:text-acid"
-                    >
-                        Email Address
-                    </label>
+
+                <div className="flex justify-center pt-8">
+                    <button type="submit" className="group relative px-12 py-5 bg-acid text-denim font-black text-lg uppercase tracking-wider hover:bg-white transition-colors duration-300">
+                        <span className="relative z-10">Send Message</span>
+                        <div className="absolute top-2 left-2 w-full h-full border border-white z-0 pointer-events-none group-hover:top-0 group-hover:left-0 transition-all duration-300" />
+                    </button>
                 </div>
-            </div>
-
-            <div className="relative group">
-                <textarea 
-                    name="message" 
-                    id="message"
-                    rows={4}
-                    value={formState.message}
-                    onChange={handleChange}
-                    required
-                    className="peer w-full bg-transparent border-b border-bone/20 py-4 text-xl focus:outline-none focus:border-acid transition-colors duration-300 placeholder-transparent resize-none"
-                    placeholder="Your Message"
-                />
-                 <label 
-                        htmlFor="message" 
-                        className="absolute left-0 top-0 text-bone/50 text-base transition-all duration-300 peer-placeholder-shown:top-4 peer-placeholder-shown:text-xl peer-placeholder-shown:text-bone/30 peer-focus:top-0 peer-focus:text-xs peer-focus:text-acid"
-                    >
-                        Your Message
-                    </label>
-            </div>
-
-            <div className="flex justify-center pt-8">
-                <button type="submit" className="group relative px-12 py-5 bg-acid text-denim font-black text-lg uppercase tracking-wider hover:bg-white transition-colors duration-300">
-                    <span className="relative z-10">Send Message</span>
-                     <div className="absolute top-2 left-2 w-full h-full border border-white z-0 pointer-events-none group-hover:top-0 group-hover:left-0 transition-all duration-300" />
-                </button>
-            </div>
-        </motion.form>
+            </motion.form>
+        )}
       </div>
       
        {/* Background Elements */}

@@ -46,17 +46,18 @@ export default function Hero() {
           Each piece tells a story of survival and style.
         </motion.p>
 
-        <motion.button
+        <motion.a
+          href="#products"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="group relative px-8 py-4 bg-transparent border border-acid text-acid font-bold text-lg overflow-hidden"
+          className="group relative px-8 py-4 bg-transparent border border-acid text-acid font-bold text-lg overflow-hidden inline-block"
         >
           <span className="relative z-10 group-hover:text-denim transition-colors duration-300">
             EXPLORE THE DROP
           </span>
           <div className="absolute inset-0 bg-acid transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
-        </motion.button>
+        </motion.a>
       </div>
 
       {/* Scroll Indicator */}

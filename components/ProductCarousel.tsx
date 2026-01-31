@@ -45,7 +45,7 @@ const products = [
 
 export default function ProductCarousel() {
   return (
-    <section className="py-20 bg-bone">
+    <section id="products" className="py-20 bg-bone">
       <div className="max-w-7xl mx-auto px-6 mb-12 flex justify-between items-end">
         <div>
           <h2 className="text-4xl md:text-5xl font-bold text-denim mb-2">
@@ -53,9 +53,9 @@ export default function ProductCarousel() {
           </h2>
           <p className="text-denim/60">Limited edition pieces. Blink and you miss it.</p>
         </div>
-        <button className="hidden md:flex items-center gap-2 text-denim font-bold hover:text-acid transition-colors">
+        <Link href="https://e-souvenirs.netlify.app/planet-pouch" target="_blank" className="hidden md:flex items-center gap-2 text-denim font-bold hover:text-acid transition-colors">
           VIEW ALL <ArrowRight className="w-5 h-5" />
-        </button>
+        </Link>
       </div>
 
       {/* Carousel Container */}
