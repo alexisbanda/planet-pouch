@@ -27,7 +27,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 mix-blend-difference">
-          <img src="/logo.png" alt="PlanetPouch" className="w-12 h-12 rounded-full" />
+          <img src="/logo-new.jpg" alt="PlanetPouch" className="w-12 h-12 rounded-full" />
           <span className="text-2xl font-bold tracking-tighter text-white hidden md:block">PlanetPouch</span>
         </Link>
 

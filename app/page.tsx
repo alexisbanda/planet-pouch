@@ -4,6 +4,9 @@ import Ticker from "@/components/Ticker";
 import ProductCarousel from "@/components/ProductCarousel";
 import ProcessSteps from "@/components/ProcessSteps";
 import Manifesto from "@/components/Manifesto";
+import Founder from "@/components/Founder";
+import Team from "@/components/Team";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -15,6 +18,9 @@ export default function Home() {
       <ProductCarousel />
       <ProcessSteps />
       <Manifesto />
+      <Founder />
+      <Team />
+      <Contact />
       <Footer />
     </main>
   );
