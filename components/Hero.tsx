@@ -12,13 +12,14 @@ export default function Hero() {
           loop
           muted
           playsInline
+          poster="/hero-bg.png"
           className="w-full h-full object-cover grayscale contrast-125"
         >
           {/* Using a placeholder video URL or local asset */}
           <source src="https://videos.pexels.com/video-files/5555627/5555627-hd_1080_1920_30fps.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-denim/40 mix-blend-multiply" />
-        <div className="absolute inset-0 Grain" />
+        <div className="absolute inset-0 grain" />
       </div>
 
       {/* Content */}
@@ -63,8 +64,9 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
+        <span className="text-acid text-xs tracking-widest uppercase">Scroll</span>
         <div className="w-[1px] h-20 bg-gradient-to-b from-transparent via-acid to-transparent animate-pulse" />
       </motion.div>
     </section>
