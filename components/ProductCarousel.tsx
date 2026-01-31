@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const products = [
   {
@@ -59,7 +60,7 @@ export default function ProductCarousel() {
 
       {/* Carousel Container */}
       <div className="overflow-x-auto pb-8 hide-scrollbar px-6 -mx-6 md:mx-0 md:px-0 scroll-pl-6 snap-x snap-mandatory">
-        <div className="flex gap-6 w-max md:w-full">
+        <div className="flex gap-6 w-max md:w-fit md:mx-auto">
           {products.map((product) => (
             <motion.div
               key={product.id}
@@ -67,28 +68,30 @@ export default function ProductCarousel() {
               whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="relative aspect-[4/5] overflow-hidden bg-gray-200 mb-4 border border-denim/10">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                />
-                <img
-                  src={product.hoverImage}
-                  alt={`${product.name} hover`}
-                  className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100 scale-105"
-                />
-                
-                {stateTag(product.status)}
-              </div>
-              
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="text-xl font-bold text-denim">{product.name}</h3>
-                  <p className="text-denim/60 text-sm">{product.variant}</p>
+              <Link href="https://e-souvenirs.netlify.app/planet-pouch/producto/Dge0byYTbpCftxtHjxtj" target="_blank">
+                <div className="relative aspect-[4/5] overflow-hidden bg-gray-200 mb-4 border border-denim/10">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                  />
+                  <img
+                    src={product.hoverImage}
+                    alt={`${product.name} hover`}
+                    className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100 scale-105"
+                  />
+                  
+                  {stateTag(product.status)}
                 </div>
-                <span className="text-lg font-bold text-denim">{product.price}</span>
-              </div>
+                
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="text-xl font-bold text-denim">{product.name}</h3>
+                    <p className="text-denim/60 text-sm">{product.variant}</p>
+                  </div>
+                  <span className="text-lg font-bold text-denim">{product.price}</span>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>

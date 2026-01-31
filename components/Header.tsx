@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -32,14 +32,14 @@ export default function Header() {
 
         {/* Right Actions */}
         <div className="flex items-center gap-6">
-          <button className="relative group text-white">
+          <Link href="https://e-souvenirs.netlify.app/planet-pouch" target="_blank" className="relative group text-white">
             <ShoppingBag className="w-6 h-6" />
             <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-acid rounded-full" />
-          </button>
+          </Link>
           
-          <button className="bg-acid text-denim px-5 py-2 font-bold text-sm tracking-wide hover:bg-white transition-colors duration-300">
+          <Link href="https://e-souvenirs.netlify.app/planet-pouch" target="_blank" className="bg-acid text-denim px-5 py-2 font-bold text-sm tracking-wide hover:bg-white transition-colors duration-300">
             SHOP NOW
-          </button>
+          </Link>
         </div>
       </div>
     </motion.header>
