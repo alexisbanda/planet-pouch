@@ -10,8 +10,8 @@ const products = [
     name: "The Weekender",
     variant: "Dark Wash",
     price: "$120",
-    image: "https://images.unsplash.com/photo-1590735213920-68192a437abc?q=80&w=600&auto=format&fit=crop",
-    hoverImage: "https://images.unsplash.com/photo-1590735213920-68192a437abc?q=80&w=600&auto=format&fit=crop", // Placeholder, ideally different
+    image: "/product-weekender.png",
+    hoverImage: "/product-weekender.png", // Using same image for now, creates a subtle zoom effect
     status: "Only 1 left",
   },
   {
@@ -19,8 +19,8 @@ const products = [
     name: "Urban Tote",
     variant: "Frayed Edge",
     price: "$85",
-    image: "https://images.unsplash.com/photo-1605763240004-7e93b172d754?q=80&w=600&auto=format&fit=crop",
-    hoverImage: "https://images.unsplash.com/photo-1605763240004-7e93b172d754?q=80&w=600&auto=format&fit=crop",
+    image: "/product-tote.png",
+    hoverImage: "/product-tote.png",
     status: "Sold Out",
   },
   {
@@ -28,8 +28,8 @@ const products = [
     name: "Mini Crossbody",
     variant: "Patchwork",
     price: "$65",
-    image: "https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?q=80&w=600&auto=format&fit=crop",
-    hoverImage: "https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?q=80&w=600&auto=format&fit=crop",
+    image: "/product-crossbody.png",
+    hoverImage: "/product-crossbody.png",
     status: "New Drop",
   },
   {
@@ -37,8 +37,8 @@ const products = [
     name: "Messenger",
     variant: "Vintage Blue",
     price: "$95",
-    image: "https://images.unsplash.com/photo-1553531384-cc64ac80f931?q=80&w=600&auto=format&fit=crop",
-    hoverImage: "https://images.unsplash.com/photo-1553531384-cc64ac80f931?q=80&w=600&auto=format&fit=crop",
+    image: "/product-messenger.png",
+    hoverImage: "/product-messenger.png",
     status: "Pre-order",
   },
 ];
