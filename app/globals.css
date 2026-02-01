@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --background: #f5f5f5;
+  --background: #f3f0e6;
   --foreground: #0c1b33;
   --color-denim: #0c1b33;
-  --color-acid: #ccff00;
+  --color-acid: #98a03e;
 }
 
 body {
@@ -41,6 +41,10 @@ body {
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
