@@ -7,32 +7,26 @@ export default function Hero() {
     <section className="relative h-screen w-full overflow-hidden bg-denim">
       {/* Video Background (Placeholder) */}
       <div className="absolute inset-0 z-0 opacity-60">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/hero-bg.png"
+        <img
+          src="/hero-new.jpg"
+          alt="Planet Pouch Hero"
           className="w-full h-full object-cover grayscale contrast-125"
-        >
-          {/* Using a placeholder video URL or local asset */}
-          <source src="https://videos.pexels.com/video-files/5555627/5555627-hd_1080_1920_30fps.mp4" type="video/mp4" />
-        </video>
+        />
         <div className="absolute inset-0 bg-denim/40 mix-blend-multiply" />
         <div className="absolute inset-0 grain" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-start px-6 max-w-7xl mx-auto">
+      <div className="relative z-10 h-full flex flex-col justify-end items-center px-6 max-w-7xl mx-auto pb-32 pt-20 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-6xl md:text-8xl font-bold text-bone leading-[0.9] tracking-tight mb-6"
         >
-          YOUR OLD JEANS, <br />
+          TAKE THE PLANET <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-acid to-white">
-            NEW PURPOSE.
+            WITH YOU.
           </span>
         </motion.h1>
 
